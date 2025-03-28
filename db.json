@@ -1,0 +1,124 @@
+{
+    "serviceProviders": [
+      {
+        "id": 1,
+        "companyName": "Acme Plumbing",
+        "briefDescription": "Expert plumbing services for homes and offices.",
+        "description": "Expert plumbing services for residential and commercial clients.",
+        "location": "New York",
+        "availability": "Everyday",
+        "contact": "555-1234",
+        "email": "info@acmeplumbing.com",
+        "website": "https://www.acmeplumbing.com",
+        "rating": 4.5
+      },
+      {
+        "id": 2,
+        "companyName": "XYZ Gardening",
+        "briefDescription": "Lawn care, garden design, and seasonal planting.",
+        "description": "Lawn care, garden design, and seasonal planting.",
+        "location": "Nairobi",
+        "availability": "Weekdays",
+        "contact": "555-5678",
+        "email": "info@xyzgardening.com",
+        "website": "https://www.xyzgardening.com",
+        "rating": 4.7
+      },
+      {
+        "id": 3,
+        "companyName": "Clean Home Services",
+        "briefDescription": "Deep cleaning, home cleaning, and office cleaning services.",
+        "description": "Deep cleaning, home cleaning, and office cleaning services.",
+        "location": "Nairobi",
+        "availability": "Everyday",
+        "contact": "555-8765",
+        "email": "info@cleanhomeservices.com",
+        "website": "https://www.cleanhomeservices.com",
+        "rating": 4.8
+      },
+      {
+        "id": 4,
+        "companyName": "Tech Solutions",
+        "briefDescription": "Reliable IT support and troubleshooting.",
+        "description": "IT support for small and medium-sized businesses.",
+        "location": "Nairobi",
+        "availability": "24/7",
+        "contact": "555-2345",
+        "email": "support@techsolutions.com",
+        "website": "https://www.techsolutions.com",
+        "rating": 4.6
+      },
+      {
+        "id": 5,
+        "companyName": "Plumbing Pro",
+        "briefDescription": "Plumbing repairs and installations.",
+        "description": "Plumbing repairs and installations.",
+        "location": "Nairobi",
+        "availability": "Weekends",
+        "contact": "555-4321",
+        "email": "info@plumbingpro.com",
+        "website": "https://www.plumbingpro.com",
+        "rating": 4.5
+      },
+      {
+        "id": 6,
+        "companyName": "Elite Security",
+        "briefDescription": "Security guards, CCTV installations, and alarm systems.",
+        "description": "Security guards, CCTV installations, and alarm systems.",
+        "location": "Nairobi",
+        "availability": "24/7",
+        "contact": "555-5671",
+        "email": "contact@elitesecurity.com",
+        "website": "https://www.elitesecurity.com",
+        "rating": 4.7
+      },
+      {
+        "id": 7,
+        "companyName": "Skyline Gardening",
+        "briefDescription": "Garden maintenance and landscape designing.",
+        "description": "Garden maintenance and landscape designing.",
+        "location": "Kilimani",
+        "availability": "Weekdays",
+        "contact": "555-6789",
+        "email": "contact@skylinegardening.com",
+        "website": "https://www.skylinegardening.com",
+        "rating": 4.9
+      },
+      {
+        "id": 8,
+        "companyName": "Top Notch Cleaners",
+        "briefDescription": "Commercial and residential cleaning services.",
+        "description": "Commercial and residential cleaning services.",
+        "location": "Westlands",
+        "availability": "Everyday",
+        "contact": "555-2348",
+        "email": "info@topnotchcleaners.com",
+        "website": "https://www.topnotchcleaners.com",
+        "rating": 4.3
+      },
+      {
+        "id": 9,
+        "companyName": "Quick Plumbing Services",
+        "briefDescription": "24/7 emergency plumbing services.",
+        "description": "24/7 emergency plumbing services.",
+        "location": "Nairobi",
+        "availability": "24/7",
+        "contact": "555-9087",
+        "email": "info@quickplumbing.com",
+        "website": "https://www.quickplumbing.com",
+        "rating": 4.6
+      },
+      {
+        "id": 10,
+        "companyName": "Giga Electrical Repairs",
+        "briefDescription": "Electrical wiring, appliance fixing, and repairs.",
+        "description": "Electrical wiring, appliance fixing, and repairs.",
+        "location": "Nairobi",
+        "availability": "Weekdays",
+        "contact": "555-1239",
+        "email": "support@gigaelectric.com",
+        "website": "https://www.gigaelectric.com",
+        "rating": 4.5
+      }
+    ]
+  }
