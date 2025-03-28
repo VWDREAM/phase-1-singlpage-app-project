@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ServiceLink connects you to trusted service providers in your area. Find cleaning, gardening, tutoring services, and more.">
+    <title>ServiceLink</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div id="logo">
+            <h1>ServiceLink</h1>
+            <p><strong>Connecting you to trusted service providers in your area</strong></p>
+        </div>
+        <nav id="navbar">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about-us">About Us</a></li>
+                <li><a href="#contact-us">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <form id="search-form" action="#" method="GET">Find Service Providers
+        <input type="text" id="general-filter" placeholder="Filter by Company, Description, or Location">
+
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Company Name</th>
+                <th>Description</th>
+                <th>Location</th>
+                <th>Availability</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="serviceTable"></tbody>
+    </table>
+
+    <!-- Profile Popup -->
+    <div id="profile-popup"></div>
+
+    <!-- Booking Modal -->
+   <div id="booking-popup" class="booking-modal">
+        <h3 id="booking-title"></h3>
+        <form id="booking-form" onsubmit="submitBooking(event)">
+            <input type="text" id="name" placeholder="Your Name" required> <input type="tel" id="contact" placeholder="Contact (Phone or Email)" required pattern="[\+]\d{2,}|\d{10,}"> <input type="date" id="date" required> <button type="submit">Confirm Booking</button>
+            <button type="button" class="close-btn" onclick="closeBookingForm()">Cancel</button>
+        </form>
+    </div>
+    <div id="custom-popup-container"></div>
+
+    <footer>
+        <p>&copy; 2025 ServiceLink. All Rights Reserved.</p>
+        <p>Designed and Developed by Virginia</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
