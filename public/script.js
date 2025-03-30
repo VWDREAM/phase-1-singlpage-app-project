@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // API URL
-const apiUrl = 'http://localhost:3000/serviceProviders';
+const apiUrl = "https://phase-1-singlpage-app-project.onrender.com/serviceProviders";
 
 // Function to fetch and display data
 function fetchData() {
