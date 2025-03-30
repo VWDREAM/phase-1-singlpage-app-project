@@ -9,6 +9,7 @@
 </head>
 <body>
 
+    <!-- Header Section -->
     <header>
         <div id="logo">
             <h1>ServiceLink</h1>
@@ -18,15 +19,19 @@
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about-us">About Us</a></li>
+                <li><a href="#services">Services</a></li>
                 <li><a href="#contact-us">Contact Us</a></li>
             </ul>
         </nav>
     </header>
 
-    <form id="search-form" action="#" method="GET">Find Service Providers
+    <!-- Search Form -->
+    <form id="search-form" action="#" method="GET">
+        <label for="general-filter"><strong>Find Service Providers:</strong></label>
         <input type="text" id="general-filter" placeholder="Filter by Company, Description, or Location">
-
     </form>
+
+    <!-- Service Providers Table -->
     <table>
         <thead>
             <tr>
@@ -45,20 +50,34 @@
     <div id="profile-popup"></div>
 
     <!-- Booking Modal -->
-   <div id="booking-popup" class="booking-modal">
+    <div id="booking-popup" class="booking-modal">
         <h3 id="booking-title"></h3>
         <form id="booking-form" onsubmit="submitBooking(event)">
-            <input type="text" id="name" placeholder="Your Name" required> <input type="tel" id="contact" placeholder="Contact (Phone or Email)" required pattern="[\+]\d{2,}|\d{10,}"> <input type="date" id="date" required> <button type="submit">Confirm Booking</button>
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" required>
+
+            <label for="contact">Contact (Phone or Email):</label>
+            <input type="tel" id="contact" required pattern="[\+]\d{2,}|\d{10,}">
+
+            <label for="date">Booking Date:</label>
+            <input type="date" id="date" required>
+
+            <button type="submit" class="submit-btn">Confirm Booking</button>
             <button type="button" class="close-btn" onclick="closeBookingForm()">Cancel</button>
         </form>
     </div>
+
+    <!-- Custom Popup -->
     <div id="custom-popup-container"></div>
 
+    <!-- Footer Section -->
     <footer>
         <p>&copy; 2025 ServiceLink. All Rights Reserved.</p>
         <p>Designed and Developed by Virginia</p>
     </footer>
 
+    <!-- JavaScript -->
     <script src="script.js"></script>
+
 </body>
 </html>

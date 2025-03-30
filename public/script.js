@@ -1,40 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
     fetchData();
-
-    // Add event listener for general filter
     document.getElementById('general-filter').addEventListener('input', filterTable);
 });
 
-// API URL
 const apiUrl = "https://phase-1-singlpage-app-project.onrender.com/serviceProviders";
 
-// Function to fetch and display data
 function fetchData() {
-    console.log("fetchData called");
     fetch(apiUrl)
         .then(response => {
-            console.log("fetch response:", response);
-            if (!response.ok) {
-                console.log("Response not ok");
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
+            if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
             return response.json();
         })
         .then(data => {
-            console.log("fetch data:", data);
-            if (data && Array.isArray(data)) {
-                populateTable(data);
-            } else {
-                console.error("Data is not in the correct format or is empty");
-                console.log("Returned data:", data);
-            }
+            if (Array.isArray(data)) populateTable(data);
+            else console.error("Data format incorrect or empty");
         })
-        .catch(error => {
-            console.error("fetch error:", error);
-        });
+        .catch(error => console.error("Fetch error:", error));
 }
 
-// Function to populate the table
 function populateTable(serviceProviders) {
     const tableBody = document.getElementById('serviceTable');
     tableBody.innerHTML = '';
@@ -48,42 +31,36 @@ function populateTable(serviceProviders) {
             <td>${service.location}</td>
             <td>${service.availability}</td>
             <td>
-                <button class="view-profile-btn" onclick="viewProfile(${service.id})">View Profile</button>
-                <button class="contact-btn" onclick="contactServiceProvider('${service.contact}', '${service.email}')">Contact</button>
-                <button class="book-btn" onclick="bookService('${service.companyName}')">Book</button>
+                <button onclick="viewProfile(${service.id})">View Profile</button>
+                <button onclick="contactServiceProvider('${service.contact}', '${service.email}')">Contact</button>
+                <button onclick="bookService('${service.companyName}')">Book</button>
             </td>
         `;
         tableBody.appendChild(row);
     });
 }
 
-// Function to view service provider profile
 function viewProfile(serviceId) {
-    console.log("viewProfile called. serviceId:", serviceId);
     fetch(`${apiUrl}/${serviceId}`)
         .then(response => {
-            console.log("profile fetch response:", response);
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
+            if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
             return response.json();
         })
         .then(data => {
-            console.log("profile fetch data:", data);
             showCustomPopup(`
-                Company: ${data.companyName}<br>
-                Services: ${data.description}<br>
-                Rating: ${data.rating}<br>
-                Contact: ${data.contact}<br>
-                Email: ${data.email}<br>
-                Website: ${data.website}
+                <strong>Company:</strong> ${data.companyName}<br>
+                <strong>Services:</strong> ${data.description}<br>
+                <strong>Rating:</strong> ${data.rating}<br>
+                <strong>Contact:</strong> ${data.contact}<br>
+                <strong>Email:</strong> ${data.email}<br>
+                <strong>Website:</strong> ${data.website}
             `);
         })
         .catch(error => console.error('Error fetching service details:', error));
 }
 
 function contactServiceProvider(contact, email) {
-    showCustomPopup(`Contact: ${contact}<br>Email: ${email}`);
+    showCustomPopup(`<strong>Contact:</strong> ${contact}<br><strong>Email:</strong> ${email}`);
 }
 
 function bookService(companyName) {
@@ -91,24 +68,16 @@ function bookService(companyName) {
     document.getElementById('booking-popup').style.display = 'block';
 }
 
+function closeBookingForm() {
+    document.getElementById('booking-popup').style.display = 'none';
+}
+
 function submitBooking(event) {
     event.preventDefault();
-
-    const name = document.getElementById('name').value;
-    const contact = document.getElementById('contact').value;
-    const date = document.getElementById('date').value;
-
-    console.log("Name:", name, "Contact:", contact, "Date:", date);
-
-    // Clear form fields
     document.getElementById('name').value = '';
     document.getElementById('contact').value = '';
     document.getElementById('date').value = '';
-
-    // Close the booking form
     closeBookingForm();
-
-    // Display the notification message at the center of the viewport
     displayNotification('Booking successful! We will contact you soon.');
 }
 
@@ -117,18 +86,7 @@ function displayNotification(message) {
     notification.textContent = message;
     notification.classList.add('notification');
     document.body.appendChild(notification);
-
-    notification.style.position = 'absolute';
-    notification.style.top = `${window.scrollY + (window.innerHeight - notification.offsetHeight) / 2}px`;
-    notification.style.left = `${window.scrollX + (window.innerWidth - notification.offsetWidth) / 2}px`;
-
-    setTimeout(() => {
-        notification.remove();
-    }, 3000);
-}
-
-function closeBookingForm() {
-    document.getElementById('booking-popup').style.display = 'none';
+    setTimeout(() => notification.remove(), 3000);
 }
 
 function filterTable() {
@@ -137,13 +95,9 @@ function filterTable() {
         .then(response => response.json())
         .then(data => {
             const filteredData = data.filter(service => {
-                const companyName = service.companyName.toLowerCase();
-                const description = service.description.toLowerCase();
-                const location = service.location.toLowerCase();
-
-                return companyName.includes(filterValue) ||
-                       description.includes(filterValue) ||
-                       location.includes(filterValue);
+                return service.companyName.toLowerCase().includes(filterValue) ||
+                       service.description.toLowerCase().includes(filterValue) ||
+                       service.location.toLowerCase().includes(filterValue);
             });
             populateTable(filteredData);
         })
@@ -152,18 +106,10 @@ function filterTable() {
 
 function showCustomPopup(message) {
     const popupContainer = document.getElementById('custom-popup-container');
-    const popup = document.createElement('div');
-    popup.classList.add('custom-popup');
-    popup.innerHTML = `
-        <p>${message}</p>
-        <button onclick="closeCustomPopup()">Close</button>
-    `;
-    popupContainer.appendChild(popup);
-    popupContainer.style.display = 'flex'; // Show the popup
+    popupContainer.innerHTML = `<div class='custom-popup'><p>${message}</p><button onclick="closeCustomPopup()">Close</button></div>`;
+    popupContainer.style.display = 'flex';
 }
 
 function closeCustomPopup() {
-    const popupContainer = document.getElementById('custom-popup-container');
-    popupContainer.innerHTML = ''; // Clear the popup
-    popupContainer.style.display = 'none'; // Hide the container
+    document.getElementById('custom-popup-container').style.display = 'none';
 }

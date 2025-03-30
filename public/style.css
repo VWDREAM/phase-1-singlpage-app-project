@@ -1,282 +1,182 @@
-/* General Body Styling */
+/* General Styles */
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    font-family: Arial, sans-serif;
+    background-color: #F5F5F5;
     margin: 0;
-    padding: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
-
-/* Header Styling */
-header {
-    background-color: #800020;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
+header{
+    background-color: #840c0c;
     text-decoration: none;
-}
-
-header h1 {
-    font-size: 2rem;
-}
-
-ul {
     display: flex;
-    margin: 20px;
-    text-decoration: none;
-    list-style-type: none;
-    text-align: center;
-    margin-left: 100px;
-    align-items: center;
-    gap: 150px; /* Reduced gap */
+    flex-direction: column;
 }
-
-/* Navigation Bar Styling */
-nav {
-    background-color: #660018;
-    padding: 10px;
+/* logo */
+#logo{
+    background-color: #a91515;
     text-align: center;
+    color: #F5F5F5;
     display: flex;
     flex-direction: column;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 1rem;
-    text-align: center;
-}
-
-nav a:hover {
-    color: #ffd700;
-}
-
-/* Main Content Section */
-main {
+/* Navbar */
+#navbar{
+    background-color: #4d0e0f;
     padding: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-/* Service Categories Section */
-#serviceTable {
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-.service-categories h2 {
-    font-size: 1.5rem;
-    color: #800020;
-}
-
-.service-categories ul {
-    list-style: none;
-    padding: 0;
-}
-
-.service-categories li {
-    background-color: #e0e0e0;
-    margin: 10px 0;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.service-categories li:hover {
-    background-color: #d3d3d3;
-}
-
-/* Service Provider List Section */
-.service-providers {
-    flex-basis: 65%;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.service-providers h2 {
-    font-size: 1.5rem;
-    color: #800020;
-}
-
-.service-provider {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    margin: 10px 0;
-    background-color: #e0e0e0;
-    border-radius: 5px;
-}
-
-.service-provider img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-right: 15px;
-}
-
-.service-provider h3 {
-    font-size: 1.2rem;
-    color: #333;
-}
-
-.service-provider p {
-    font-size: 0.9rem;
-    color: #666;
-}
-
-/* Book Now Button */
-button, .view-profile-btn {
-    padding: 10px 20px;
-    background-color: #800020;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover, .view-profile-btn:hover {
-    background-color: #660018;
-}
-
-/* Footer Styling */
-footer {
-    background-color: #800020;
-    color: white;
     text-align: center;
-    padding: 15px;
-    bottom: 0;
-    width: 100%;
+    margin:30px;
+
+
+}
+#navbar ul {
+    list-style: none; /* Remove bullet points */
+    font-size: larger;
+    display: flex; /* Use Flexbox for horizontal layout */
+    text-align: center;
+    gap: 100px;
+    text-align: center;
+    margin-left:200px;
+
 }
 
-footer p {
-    margin: 0;
-    font-size: 0.9rem;
-}
+  #navbar a {
+    text-decoration: none; /* Remove underline from links */
+    text-align: center;
+    color: #F5F5F5;
 
-/* Table Styling */
+
+  }
+
+  #navbar a:hover {
+    /* Optional: Add hover effect */
+    background-color: #695a51;
+  }
+/*search-form*/
+#search-form{
+    display: flex;
+    font-size: larger;
+    margin-top:10px;
+    margin-bottom: 15px;
+}
+/* Table */
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding-left: 10px;
-    padding-right: 10px;
+    background: white;
 }
 
 th, td {
+    padding: 10px;
     border: 1px solid #ddd;
-    padding: 8px 10px;
-    text-align: left;
 }
 
 th {
-    background-color: #f2f2f2;
-    font-weight: bold;
+    background-color: #4A4A4A;
+    color: white;
 }
 
-tr:nth-child(even) {
-    background-color: #f9f9f9;
+/* Buttons */
+button {
+    background-color: #7b2020; /* Bold Grey */
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    margin: 5px;
 }
 
-tr:hover {
-    background-color: #f8e0e6; /* Light tint of burgundy */
+button:hover {
+    background-color: #d90e0e;
 }
 
-/* Modal Styles */
-#profile-popup, .booking-modal {
+/* Filter Input */
+#general-filter {
+    border: 2px solid #fa7508; /* Gold border */
+    font-size: 10px;
+    margin-bottom: 15px;
+    display: grid;
+    width: 50%;
+    margin-top: 10px;
+    margin-left: 5px;
+    padding: 10px;
+    font-size: large;
+}
+#booking-form{
+    display: grid;
+    border: 2px solid #d22020;
+    text-decoration-color: #d90e0e;
+    font-weight: bolder;
+}
+/* Booking Form Popup */
+#booking-popup {
+    display: none;
     position: fixed;
-    top: 50%;
+    z-index: 1000;
     left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 2px solid #4A4A4A;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    width: 350px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Close Button for Popup */
+#booking-popup .close-btn {
+    background-color: #4A4A4A;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#booking-popup .close-btn:hover {
+    background-color: #333333;
+    margin-bottom: 5px;
+}
+
+/* Custom Popup Styling */
+#custom-popup-container {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 50%;
+    top: 50%;
     transform: translate(-50%, -50%);
     background: white;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    display: none;
-    z-index: 1000;
+    border: 2px solid #d22020;
+    box-shadow: 0px 4px 10px rgba(248, 0, 0, 0.3);
 }
 
-.booking-modal form {
-    display: flex;
-    flex-direction: column;
-}
-
-.booking-modal form input {
-    margin-bottom: 10px;
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-.booking-modal .close-btn {
-    background-color: #f44336;
-}
-
-.booking-modal .close-btn:hover {
-    background-color: #d32f2f;
-}
-
-/* Responsive Styles (Optional) */
-@media (max-width: 600px) {
-    th, td {
-        padding: 5px 6px;
-    }
-}
-
-/* Contact and Book Button Styling */
-td button {
-    background-color: #800020;
-    color: white;
-    padding: 8px 12px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-left: 5px;
-    transition: background-color 0.3s;
-    display: inline-block;
-}
-
-td button:hover {
-    background-color: #660018;
-}
-
-/* Notification Styling */
-.notification {
-    background: linear-gradient(135deg, #4CAF50, #8BC34A);
-    color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    z-index: 1001;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.custom-popup {
     text-align: center;
+}
+
+.notification {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #de421f;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 5px;
     font-weight: bold;
 }
-
-.notification:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+footer{
+    background-color: #a91515;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+    font-size: 18px;
 }
-
-#general-filter {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    width: 300px;
-    margin-bottom: 20px;
-    font-size: 1rem;
-    background-image: url('search-icon.png');
-    background-repeat: no-repeat;
-    background-position: 98% center;
-    background-size: 20px;
-}
-
-#general-filter:focus {
-    outline: none;
-    border-color: #800020;
-    box-shadow: 0 0 5px rgba(128, 0, 32, 0.5);}
